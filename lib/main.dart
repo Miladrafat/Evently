@@ -4,7 +4,6 @@ import 'package:evently_c18/core/resources/AppTheme.dart';
 import 'package:evently_c18/providers/UserProvider.dart';
 import 'package:evently_c18/providers/theme_provider.dart';
 import 'package:evently_c18/ui/add_event/screen/add_event_screen.dart';
-import 'package:evently_c18/ui/animated_screen/alaryFastAnimation.dart';
 import 'package:evently_c18/ui/forget_pass/screen/forget_pass_screen.dart';
 import 'package:evently_c18/ui/home/screen/home_screen.dart';
 import 'package:evently_c18/ui/login/screen/login_screen.dart';
