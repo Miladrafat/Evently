@@ -65,9 +65,7 @@ class MyApp extends StatelessWidget {
         SignupScreen.routeName:(_)=>SignupScreen(),
         ForgetPassScreen.routeName:(_)=>ForgetPassScreen(),
         AddEventScreen.routeName:(_)=>AddEventScreen(),
-        AnimatedSquareBorder.routeName:(_)=>AnimatedSquareBorder(),
       },
-      // ✅ ترتيب الصفحات: Splash → Onboarding (مرة واحدة) → Start → Login
       initialRoute: SplashScreen.routeName,
     );
   }

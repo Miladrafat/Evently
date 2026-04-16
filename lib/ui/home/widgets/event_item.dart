@@ -8,9 +8,7 @@ import '../../../core/remote/network/Firestoremanager.dart';
 import '../../../model/event.dart';
 import '../../../providers/UserProvider.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
-
-// ...existing code...
-import '../../../ui/event_delete/screen/delete_event_screen.dart';
+import '../../delete_event/delete_event.dart';
 
 class EventItem extends StatefulWidget {
   final Event? event;
