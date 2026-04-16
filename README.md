@@ -1,4 +1,4 @@
-# evently_c18
+# Evently
 
 A new Flutter project.
 
