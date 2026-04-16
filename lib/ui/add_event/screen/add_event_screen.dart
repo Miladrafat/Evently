@@ -368,18 +368,15 @@ class _AddEventScreenState extends State<AddEventScreen> {
 
                                 if (widget.event == null) {
                                   await Firestoremanager.addEvent(ev);
-                                  // close loading dialog
                                   Navigator.of(context, rootNavigator: true).pop();
                                   DialogUtiles.showToastmessage(context,"Event Added Sucessfully");
-                                  // go back to previous screen
+
                                   Navigator.of(context).pop();
                                 } else {
                                   await Firestoremanager.updateEvent(ev);
-                                  // try to propagate the updated event to users' favourites (best-effort)
                                   try {
                                     await Firestoremanager.propagateEventUpdate(ev);
                                   } catch (e) {
-                                    // propagation failed (likely security rules) - log and continue
                                     print('Propagation failed: $e');
                                   }
                                   Navigator.of(context, rootNavigator: true).pop();
@@ -387,7 +384,6 @@ class _AddEventScreenState extends State<AddEventScreen> {
                                   Navigator.of(context).pop();
                                 }
                               } catch (e) {
-                                // ensure loading dialog closed
                                 try { Navigator.of(context, rootNavigator: true).pop(); } catch (_) {}
                                 DialogUtiles.showMessagedialog(context, 'Operation failed: ${e.toString()}');
                               }
