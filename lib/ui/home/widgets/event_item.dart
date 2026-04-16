@@ -10,7 +10,6 @@ import '../../../providers/UserProvider.dart';
 import 'package:flutter_fadein/flutter_fadein.dart';
 
 // ...existing code...
-import '../../../ui/event_delete/screen/delete_event_screen.dart';
 
 class EventItem extends StatefulWidget {
   final Event? event;
