@@ -39,4 +39,7 @@ abstract final class AssetsManager {
   static const String heart_selected = "assets/images/heart_selected.svg";
   static const String search = "assets/images/search.svg";
   static const String route = "assets/images/route.png";
+  static const String OnboardingHeaderLight = "assets/images/Blue White Minimal Modern Simple Bold Business Mag Logo 3@2x.png";
+  static const String OnboardingHeaderdark = "assets/images/Blue White Minimal Modern Simple Bold Busatiness Mag Logo 3@2x.png";
+  static const googleIcon="assets/images/googleicon.png";
 }

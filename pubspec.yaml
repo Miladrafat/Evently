@@ -40,7 +40,11 @@ dependencies:
   shared_preferences: ^2.5.5
   easy_localization: ^3.0.8
   firebase_core: ^4.6.0
-  firebase_auth: ^6.3.0
+  firebase_auth: ^6.4.0
+  fluttertoast: ^9.0.0
+  cloud_firestore: ^6.2.0
+  google_sign_in: ^6.2.1
+  flutter_fadein: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +72,7 @@ flutter:
   assets:
     - assets/images/
     - assets/translations/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

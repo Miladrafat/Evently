@@ -1,11 +1,13 @@
 import 'package:evently_c18/core/resources/AssetsManager.dart';
 import 'package:evently_c18/core/resources/StringsManager.dart';
+import 'package:evently_c18/providers/UserProvider.dart';
 import 'package:evently_c18/ui/add_event/screen/add_event_screen.dart';
 import 'package:evently_c18/ui/home/tabs/favorite_tab/favorite_tab.dart';
 import 'package:evently_c18/ui/home/tabs/home_tab/home_tab.dart';
 import 'package:evently_c18/ui/home/tabs/profile_tab/profile_tab.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = "home";
@@ -22,6 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
     FavoriteTab(),
     ProfileTab()
   ];
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Future.microtask(() {
+      var MyuserProvider=Provider.of<Userprovider>(context,listen: false);
+      MyuserProvider.fetchuser();
+    },);
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

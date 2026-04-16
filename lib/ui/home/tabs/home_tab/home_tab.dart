@@ -9,6 +9,9 @@ import 'package:evently_c18/ui/home/tabs/home_tab/widgets/meeting_view.dart';
 import 'package:evently_c18/ui/home/tabs/home_tab/widgets/sport_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../providers/UserProvider.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({super.key});
@@ -21,6 +24,7 @@ class _HomeTabState extends State<HomeTab> {
   int selectedTab = 0;
   @override
   Widget build(BuildContext context) {
+    var MyuserProvider=Provider.of<Userprovider>(context);
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -33,7 +37,7 @@ class _HomeTabState extends State<HomeTab> {
               Column(
                 children: [
                   Text("Welcome Back ✨",style: Theme.of(context).textTheme.labelSmall,),
-                  Text("John Safwat",style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  Text(MyuserProvider.Myuser?.name??"",style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w500
                   ),),
                 ],

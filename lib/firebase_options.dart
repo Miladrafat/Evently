@@ -47,29 +47,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCv0U6XZRB1ZUtU6yM5gKWV9af2JzXnO4M',
-    appId: '1:838454593429:web:6240bea4127cf8af29989c',
-    messagingSenderId: '838454593429',
-    projectId: 'evently-c18-bdb0b',
-    authDomain: 'evently-c18-bdb0b.firebaseapp.com',
-    storageBucket: 'evently-c18-bdb0b.firebasestorage.app',
-    measurementId: 'G-77612K2RMT',
+    apiKey: 'AIzaSyDyLKt769jS8QyPMJBr6QswIVzzWdGjTc4',
+    appId: '1:781836381973:web:c1419e39894fa2edcdc31c',
+    messagingSenderId: '781836381973',
+    projectId: 'evently-c18-57dc0',
+    authDomain: 'evently-c18-57dc0.firebaseapp.com',
+    storageBucket: 'evently-c18-57dc0.firebasestorage.app',
+    measurementId: 'G-LJN5L7DBC1',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDSbgtbkezNSopepv-sm0q6fZ0HlfSsZys',
-    appId: '1:838454593429:android:036c2de0b7b153f029989c',
-    messagingSenderId: '838454593429',
-    projectId: 'evently-c18-bdb0b',
-    storageBucket: 'evently-c18-bdb0b.firebasestorage.app',
+    apiKey: 'AIzaSyD8mlM-ynjzxld_3h1eXj9jmT08u9jEY3E',
+    appId: '1:781836381973:android:37d72984c8783f5bcdc31c',
+    messagingSenderId: '781836381973',
+    projectId: 'evently-c18-57dc0',
+    storageBucket: 'evently-c18-57dc0.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDut8r-OarlbJjC6rV83YCp46k1EVpj7bM',
-    appId: '1:838454593429:ios:a5f48fa83904665829989c',
-    messagingSenderId: '838454593429',
-    projectId: 'evently-c18-bdb0b',
-    storageBucket: 'evently-c18-bdb0b.firebasestorage.app',
+    apiKey: 'AIzaSyBvKRpBPzsIJO7JqZjhKmEqSjY3Quze6jA',
+    appId: '1:781836381973:ios:f6505d427986403ccdc31c',
+    messagingSenderId: '781836381973',
+    projectId: 'evently-c18-57dc0',
+    storageBucket: 'evently-c18-57dc0.firebasestorage.app',
     iosBundleId: 'com.example.eventlyC18',
   );
 

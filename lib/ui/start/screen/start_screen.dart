@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:evently_c18/core/remote/local/prefs_manager.dart';
 import 'package:evently_c18/core/resources/AppTheme.dart';
 import 'package:evently_c18/core/resources/AssetsManager.dart';
 import 'package:evently_c18/core/resources/ColorsManager.dart';
@@ -104,12 +105,15 @@ class StartScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 24,),
-              SizedBox(
-                width: double.infinity,
-                child: CustomBtn(title: StringsManager.letsStart, onClick: () {
-                  Navigator.pushReplacementNamed(context, LoginScreen.routeName);
-                },),
-              )
+               SizedBox(
+                 width: double.infinity,
+                 child: CustomBtn(title: StringsManager.letsStart, onClick: () async {
+                   await PrefsManager.setStartScreenShown();
+                   if(context.mounted){
+                     Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+                   }
+                 },),
+               )
             ],
           ),
         ),

@@ -28,4 +28,21 @@ class PrefsManager {
   }
 
 
+  static Future<void> setOnboardingShown() async {
+    await sharedPreferences.setBool("onboarding_shown", true);
+  }
+
+  static bool isOnboardingShown() {
+    return sharedPreferences.getBool("onboarding_shown") ?? false;
+  }
+
+  // ✅ للتحكم في عرض Start Screen مرة واحدة فقط
+  static Future<void> setStartScreenShown() async {
+    await sharedPreferences.setBool("start_screen_shown", true);
+  }
+
+  static bool isStartScreenShown() {
+    return sharedPreferences.getBool("start_screen_shown") ?? false;
+  }
+
 }

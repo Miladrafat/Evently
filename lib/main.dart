@@ -1,15 +1,16 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:evently_c18/core/remote/local/prefs_manager.dart';
 import 'package:evently_c18/core/resources/AppTheme.dart';
-import 'package:evently_c18/core/resources/ColorsManager.dart';
+import 'package:evently_c18/providers/UserProvider.dart';
 import 'package:evently_c18/providers/theme_provider.dart';
 import 'package:evently_c18/ui/add_event/screen/add_event_screen.dart';
+import 'package:evently_c18/ui/animated_screen/alaryFastAnimation.dart';
 import 'package:evently_c18/ui/forget_pass/screen/forget_pass_screen.dart';
 import 'package:evently_c18/ui/home/screen/home_screen.dart';
 import 'package:evently_c18/ui/login/screen/login_screen.dart';
+import 'package:evently_c18/ui/onboarding/onboarding_screen.dart';
 import 'package:evently_c18/ui/signup/screen/signup_screen.dart';
 import 'package:evently_c18/ui/splash/screen/splash_screen.dart';
-import 'package:evently_c18/ui/start/screen/start_screen.dart';
 import 'package:evently_c18/ui/start/screen/start_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,16 +32,20 @@ void main() async{
           ],
           path: 'assets/translations',
           child: const MyApp())));
+
 }
+
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     ThemeProvider provider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
+      navigatorKey: navigatorKey,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -51,15 +56,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         SplashScreen.routeName:(_)=>SplashScreen(),
+        OnboardingScreen.routeName:(_)=>OnboardingScreen(),
         StartScreen.routeName:(_)=>StartScreen(),
         LoginScreen.routeName:(_)=>LoginScreen(),
-        HomeScreen.routeName:(_)=>HomeScreen(),
+        HomeScreen.routeName:(_)=>ChangeNotifierProvider(
+          create:(context) => Userprovider(),
+            child: HomeScreen()),
         SignupScreen.routeName:(_)=>SignupScreen(),
         ForgetPassScreen.routeName:(_)=>ForgetPassScreen(),
-        AddEventScreen.routeName:(_)=>AddEventScreen()
+        AddEventScreen.routeName:(_)=>AddEventScreen(),
+        AnimatedSquareBorder.routeName:(_)=>AnimatedSquareBorder(),
       },
-      initialRoute: StartScreen.routeName,
+      // ✅ ترتيب الصفحات: Splash → Onboarding (مرة واحدة) → Start → Login
+      initialRoute: SplashScreen.routeName,
     );
   }
 }
-

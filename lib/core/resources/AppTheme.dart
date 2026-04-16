@@ -4,6 +4,9 @@ import 'ColorsManager.dart';
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
+    timePickerTheme: TimePickerThemeData(
+      hourMinuteColor: Colors.grey
+    ),
       scaffoldBackgroundColor: ColorsManager.backgroundColor,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
         shape: CircleBorder()
@@ -86,6 +89,9 @@ class AppTheme {
     )
   );
   static ThemeData darkTheme = ThemeData(
+      timePickerTheme: TimePickerThemeData(
+          hourMinuteColor: Colors.grey
+      ),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           shape: CircleBorder()
       ),

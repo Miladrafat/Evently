@@ -1,9 +1,12 @@
 import 'package:evently_c18/core/resources/AssetsManager.dart';
 import 'package:evently_c18/core/resources/StringsManager.dart';
 import 'package:evently_c18/core/reusable_components/custom_field.dart';
+import '../../../../../core/remote/network/Firestoremanager.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../model/event.dart';
 import '../../widgets/event_item.dart';
+import '../../widgets/eventlist.dart';
 
 class FavoriteTab extends StatefulWidget {
   const FavoriteTab({super.key});
@@ -43,11 +46,26 @@ class _FavoriteTabState extends State<FavoriteTab> {
                 },
             ),
             SizedBox(height: 16,),
-            Expanded(child: ListView.separated(
-                itemBuilder: (context, index) => EventItem(),
-                separatorBuilder: (context, index) => SizedBox(height: 16,),
-                itemCount: 10
-            ))
+            Expanded(child:StreamBuilder(stream:Firestoremanager.getFavouriteStream(),
+              builder:(context, snapshot) {
+                if (snapshot.connectionState==ConnectionState.waiting){
+                  return Center(child: CircularProgressIndicator());
+                }
+                if (snapshot.hasError){
+                  return Center(child: Text(snapshot.error.toString()));
+                }
+
+                List<Event>?events=snapshot.data??[];
+                if (events.isEmpty){
+                  return Center(child: Text("No data Available"));
+                }
+                return ListView.separated(
+                    itemBuilder: (context, index) => EventItem(event: events[index]),
+                    separatorBuilder: (context, index) => SizedBox(height: 16,),
+                    itemCount: events.length
+                );
+
+              },))
           ],
         ),
       ),
